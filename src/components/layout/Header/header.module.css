@@ -1,0 +1,48 @@
+
+
+.list {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding-left: 20px; 
+    color: #F5F5F5;
+    position: relative; 
+  }
+  
+  .list::after {
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: -8px; /* Adjust as needed */
+    width: 0; /* Start with no width */
+    border-bottom: 2px solid var(--colors-Primary, #DF7F64);
+    transition: width 0.3s ease-in-out; /* Transition effect */
+  }
+  
+  .list:hover::after {
+    width: 110%; /* Expand to full width on hover */
+  }
+  @media screen and (max-width: 768px) {
+    .list {
+      font-size: 20px;
+    }
+  }
+  
+@media screen and (max-width: 480px) {
+    .list {
+      font-size: 15px;
+      padding : 0px;
+    }
+    .list:hover::after {
+      width:0%; /* Expand to full width on hover */
+      color: #DF7F64;
+    }
+    .list:hover {
+      color: #DF7F64;
+      transition: color 0.3s ease-in-out;
+    }
+    
+  
+  }
+  
