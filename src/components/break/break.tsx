@@ -4,10 +4,8 @@ import Wrapper from "../layout/Wrapper";
 
 export default function Break() {
   return (
-
-    <div className="mt-[140px]">
-        <Image src={breakImage} alt="break" />
+    <div>
+      <Image src={breakImage} alt="break" className="w-full h-auto" />
     </div>
   );
 }
-

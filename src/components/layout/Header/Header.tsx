@@ -26,7 +26,7 @@ export default function Header() {
   };
 
   return (
-    <header className="flex max-w-[1440px] sm:w-full">
+    <header className="flex max-w-[1440px] w-full absolute top-0 px-[calc(100/1440*100vw)] py-[calc(20/670*100vh)] md:py-[20px] ">
       {!isMobile && (
         <div>
           <Image src={logo} alt="logo" className="w-full h-full md:w-[104.02px] md:h-[80px]" />
@@ -34,7 +34,7 @@ export default function Header() {
       )}
       {!isMobile && (
         <div className="flex items-center w-[683px] max-w-full lg:w-[60%] mx-auto">
-          <ul className="hidden md:flex w-[600px] md:w-[683px] h-[35px] text-white justify-between py-[8px]">
+          <ul className="hidden md:flex w-[600px] md:w-[683px] h-[35px] text-white justify-between py-[10px]">
             <li className={styles.list}>Home</li>
             <li className={styles.list}>Tours</li>
             <li className={styles.list}>Reviews</li>
@@ -46,8 +46,8 @@ export default function Header() {
       )}
       {isMobile && (
         <div className="absolute top-5 left-5 py-[2vh]">
-          {!isSidebarOpen ? (<button className="   rounded-full" onClick={toggleSidebar}>
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50" fill="currentColor" className="text-white  " >
+          {!isSidebarOpen ? (<button  onClick={toggleSidebar}>
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50" fill="currentColor" className="text-black  " >
 <path d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"></path>
 </svg>
           </button>
