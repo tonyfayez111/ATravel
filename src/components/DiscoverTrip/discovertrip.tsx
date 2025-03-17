@@ -50,16 +50,16 @@ export default function DiscoverTrip() {
   };
 
   useEffect(() => {
-    if (!isAnyOpened) {
+    if (isAnyOpened) {
       setHeight(225);
     } else {
       setHeight(0);
     }
   }, [isAnyOpened]);
+  console.log(height);
   return (
     <div
       className={`flex flex-col items-center justify-center
-   
       xl:w-[1240px] `}
     >
       <div
@@ -70,9 +70,8 @@ export default function DiscoverTrip() {
       </div>
 
       <div
-        className={`flex justify-center w-full mt-[24px] xl:h-[${
-          266 + height
-        }px] `}
+        className={`flex justify-center w-full mt-[24px] `}
+        style={{ height: `calc(72px + ${height}px)` }}
       >
         <div className="flex flex-col h-auto  justify-between items-start  xl:flex-row w-full xl:h-[134px] xl-w-[1240px]   gap-[20px] py-[32px] px-[24px] bg-white rounded-[10px] border border-[#EBE8E8] shadow-[0px_0px_15px_0px_#817e7e26]">
           {commonList.map((item, index) => (
