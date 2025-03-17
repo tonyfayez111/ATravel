@@ -57,6 +57,19 @@ export default function DiscoverTrip() {
     }
   }, [isAnyOpened]);
   console.log(height);
+  const [isXL, setIsXL] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsXL(window.innerWidth >= 1280); // 1280px is Tailwind's `xl` breakpoint
+    };
+
+    handleResize(); // Check on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div
       className={`flex flex-col items-center justify-center
@@ -71,7 +84,7 @@ export default function DiscoverTrip() {
 
       <div
         className={`flex justify-center w-full mt-[24px] `}
-        style={{ height: `calc(72px + ${height}px)` }}
+        style={isXL ? { height: `calc(72px + ${height}px)` } : {}}
       >
         <div className="flex flex-col h-auto  justify-between items-start  xl:flex-row w-full xl:h-[134px] xl-w-[1240px]   gap-[20px] py-[32px] px-[24px] bg-white rounded-[10px] border border-[#EBE8E8] shadow-[0px_0px_15px_0px_#817e7e26]">
           {commonList.map((item, index) => (

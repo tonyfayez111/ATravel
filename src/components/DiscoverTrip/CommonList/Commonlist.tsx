@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface CommonListProps {
@@ -18,6 +18,12 @@ const CommonList: React.FC<CommonListProps> = ({
   onClick,
   className,
 }) => {
+  const [width, setWidth] = useState<number>(0);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setWidth(window.innerWidth);
+    }
+  }, []);
   return (
     <div className="flex flex-row items-center w-full ">
       {title !== "Location" && window.innerWidth >= 1280 && (
