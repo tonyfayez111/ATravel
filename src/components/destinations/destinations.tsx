@@ -91,31 +91,33 @@ export default function Destinations() {
       >
         Destinations
       </div>
-      {!isMobile ? (
-        // Desktop: Show grid layout
-        <div className=" flex  gap-4.5 flex-wrap  w-full justify-center items-center">
-          {cardData.map((card, index) => (
-            <MiniCard key={index} {...card} />
-          ))}
-        </div>
-      ) : (
-        // Mobile: Show Swiper carousel
-        <Swiper
-          spaceBetween={10}
-          slidesPerView={1}
-          navigation
-          modules={[Navigation]}
-          className="w-full "
-        >
-          {cardData.map((card, index) => (
-            <SwiperSlide key={index} className="w-full">
-              <div className="flex w-full justify-center items-center">
-                <MiniCard {...card} />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      )}
+      <div id="tours" className="w-full">
+        {!isMobile ? (
+          // Desktop: Show grid layout
+          <div className=" flex  gap-4.5 flex-wrap  w-full justify-center items-center">
+            {cardData.map((card, index) => (
+              <MiniCard key={index} {...card} />
+            ))}
+          </div>
+        ) : (
+          // Mobile: Show Swiper carousel
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            navigation
+            modules={[Navigation]}
+            className="w-full "
+          >
+            {cardData.map((card, index) => (
+              <SwiperSlide key={index} className="w-full">
+                <div className="flex w-full justify-center items-center">
+                  <MiniCard {...card} />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        )}
+      </div>
       <div className="flex justify-center items-center w-full">
         <Button className="md:!w-[262px] md:!h-[44px] !mt-[24px] md:!leading-[24px] ">
           View Destinations

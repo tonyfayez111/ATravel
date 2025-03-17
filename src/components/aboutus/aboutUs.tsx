@@ -15,13 +15,16 @@ export default function AboutUs() {
       style={{ backgroundImage: `url(${aboutus.src})` }}
     >
       {/* Top Section (Logo & About) */}
-      <div className="flex flex-col items-center justify-center h-screen max-h-[720px]  w-full xl:items-start xl:mt-[301px] xl:ml-[192px] ">
+      <div
+        className="flex flex-col justify-center items-center  h-screen max-h-[720px] xl:justify-start  xl:items-start xl:mt-[301px] xl:ml-[92px] "
+        style={{ width: "-webkit-fill-available" }}
+      >
         <Image src={Logo} alt="aboutus" />
 
-        <h1 className="font-bold text-[clamp(20px,2vw,40px)] font-poppins mt-8 text-white xl:text-[16px]">
+        <div className="font-bold text-[clamp(20px,2vw,40px)] font-poppins mt-[50px] text-white xl:text-[16px] md:leading-[24px] md:h-[11px]">
           About Us
-        </h1>
-        <p className="text-[14px] text-white  leading-6  mt-2 max-w-[400px] text-center xl:text-left">
+        </div>
+        <p className="text-[14px] text-white  md:leading-[20px]  mt-[16px] max-w-[400px] text-center xl:text-left font-poppins md:h-[70px] md:w-[400px] ">
           We are specialists in creating customized tour itineraries for
           families, groups, and individuals.
           <br />
@@ -29,9 +32,9 @@ export default function AboutUs() {
           everything.
         </p>
       </div>
-      <div>
+      <div className="mb-[48px] flex flex-col gap-[16px] h-full">
         {/* Social Icons (Centered) */}
-        <div className="flex justify-center gap-[15px] mt-10">
+        <div className="flex justify-center gap-[14px] ">
           <Image src={instagram} alt="instagram" />
           <Image src={twitter} alt="twitter" />
           <Image src={facebook} alt="facebook" />
@@ -39,13 +42,12 @@ export default function AboutUs() {
           <Image src={message} alt="message" />
         </div>
 
-        {/* Footer */}
-        <div className="w-full text-center text-gray-300 text-xs md:text-sm mt-[16px] mb-[48px]">
-          <hr className="w-[80%] mx-auto border-[#B8B8B8]" />
-          <p className="mt-[8px]">
+        <div className="flex flex-col gap-[8px]">
+          <hr className="w-[100%] xl:w-[1064.25px] mx-auto border-[#B8B8B8]" />
+          <p className="w-full text-center text-gray-300 text-xs md:text-sm leading-[16.5px] ">
             @Copyright 2025 Designed and developed by{" "}
             <span className="font-bold text-white">Innovation Scope</span>.
-            Eg.ypt All Rights Reserved.
+            Egypt All Rights Reserved.
           </p>
         </div>
       </div>

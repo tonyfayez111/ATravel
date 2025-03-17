@@ -7,7 +7,7 @@ import DiscoverTrip from "../DiscoverTrip/discovertrip";
 
 const Hero = () => {
   return (
-    <div className="w-full ">
+    <div id="home" className="w-full">
       <div>
         <div className="">
           <Image

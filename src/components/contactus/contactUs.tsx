@@ -4,9 +4,12 @@ import Button from "../shared/Button";
 export default function ContactUs() {
   return (
     <Wrapper>
-      <div>
+      <div
+        id="contact"
+        className="w-full md:h-[505px] flex flex-col gap-[24px]"
+      >
         <div
-          className="text-[#DF7F64] text-[clamp(16px,8vw,40px)] xl:text-[80px] text-center  "
+          className="text-[#DF7F64] text-[clamp(16px,8vw,40px)] xl:text-[80px] text-center md:leading-[108px] "
           style={{ fontFamily: "Smooch, cursive" }}
         >
           Contact Us{" "}
@@ -14,7 +17,7 @@ export default function ContactUs() {
         <div className="flex flex-col gap-[24px] w-full h-full xl:w-[896px] xl:h-[305px] xl:mx-[172px] ">
           <div className="flex w-full gap-[24px]">
             <div className=" w-1/2 flex-col gap-[12px]">
-              <div className="text-[#1B1B1B] text-[18px] font-poppins">
+              <div className="text-[#1B1B1B] text-[18px] font-poppins leading-[24px] md:mb-[12px]">
                 Full name*
               </div>
               <input
@@ -24,7 +27,7 @@ export default function ContactUs() {
               />
             </div>
             <div className=" w-1/2 flex-col gap-[12px]">
-              <div className="text-[#1B1B1B] text-[18px] font-poppins">
+              <div className="text-[#1B1B1B] text-[18px] font-poppins leading-[24px] md:mb-[12px]">
                 Email*
               </div>
               <input
@@ -35,8 +38,8 @@ export default function ContactUs() {
             </div>
           </div>
           <div>
-            <div className=" w-full flex-col gap-[12px]">
-              <div className="text-[#1B1B1B] text-[18px] font-poppins">
+            <div className=" w-full flex-col gap-[12px] ">
+              <div className="text-[#1B1B1B] text-[18px] font-poppins leading-[24px] md:mb-[12px]">
                 Subject
               </div>
               <input
@@ -47,8 +50,8 @@ export default function ContactUs() {
             </div>
           </div>
           <div className=" w-full flex-col gap-[12px]">
-            <div className="text-[#1B1B1B] text-[18px] font-poppins">
-              Message
+            <div className="text-[#1B1B1B] text-[18px] font-poppins leading-[24px] md:mb-[12px] ">
+              Message*
             </div>
             <input
               type="text"
@@ -59,7 +62,7 @@ export default function ContactUs() {
           <div></div>
         </div>
         <div className="flex justify-center items-center w-full">
-          <Button className="md:!w-[262px] md:!h-[44px] !mt-[24px] md:!leading-[24px] ">
+          <Button className="md:!w-[262px] md:!h-[44px] !mt-[24px] md:!leading-[24px]  ">
             Send Message
           </Button>
         </div>

@@ -54,57 +54,55 @@ export default function WhyChooseUs() {
     return () => clearInterval(interval); // Cleanup on unmount
   }, [whyChooseUsData.length]);
   return (
-    <Wrapper>
-      <div className="w-full h-full  md:h-[1186px]  ">
-        <div className="flex flex-col gap-[24px] absolute">
-          <div
-            className="text-[#DF7F64] text-[clamp(16px,8vw,40px)] xl:text-[80px] text-left  "
-            style={{ fontFamily: "Smooch, cursive" }}
-          >
-            Why Choose Us
-          </div>
-          {!isMobile ? (
-            <div className="flex flex-col gap-[24px]">
-              <div className="flex flex-col gap-[32px]">
-                {whyChooseUsData.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex flex-col gap-[16px]  md:w-[749px] md:h-[83px] z-10"
-                  >
-                    <div className="flex  gap-[16px] items-center">
-                      <Image src={item.icon} alt={item.title} />
-                      <div className="lg:text-[22px] text-[16px] font-poppins text[#1B1B1B] font-bold ">
-                        {item.title}
-                      </div>
-                    </div>
-                    <div className="lg:text-[16px] text-[12px] font-poppins text-[##666666]">
-                      {item.description}
+    <div className="w-full h-full  lg:h-[1186px]  flex flex-col justify-center md:justify-start  ">
+      <div className="flex flex-col gap-[24px] absolute px-[calc(100/1440*80vw)] lg-px[20px]">
+        <div
+          className="text-[#DF7F64] text-[clamp(16px,8vw,40px)] xl:text-[80px] text-left  "
+          style={{ fontFamily: "Smooch, cursive" }}
+        >
+          Why Choose Us
+        </div>
+        {!isMobile ? (
+          <div className="flex flex-col gap-[24px]">
+            <div className="flex flex-col gap-[32px]">
+              {whyChooseUsData.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-[16px]  md:w-[749px] md:h-[83px] z-10"
+                >
+                  <div className="flex  gap-[16px] items-center">
+                    <Image src={item.icon} alt={item.title} />
+                    <div className="lg:text-[22px] text-[16px] font-poppins text[#1B1B1B] font-bold ">
+                      {item.title}
                     </div>
                   </div>
-                ))}
+                  <div className="lg:text-[16px] text-[12px] font-poppins text-[##666666]">
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col gap-[24px]">
+            <div className="flex flex-col gap-[32px] w-full">
+              <div className="flex h-full gap-[16px] ">
+                {whyChooseUsData[currentIndex].title}
+                <Image
+                  src={whyChooseUsData[currentIndex].icon}
+                  alt={whyChooseUsData[currentIndex].title}
+                />
+              </div>
+              <div className="bg-white/60 rounded-lg p-4 ">
+                {whyChooseUsData[currentIndex].description}
               </div>
             </div>
-          ) : (
-            <div className="flex flex-col gap-[24px]">
-              <div className="flex flex-col gap-[32px] w-[95%]">
-                <div className="flex gap-[16px] ">
-                  {whyChooseUsData[currentIndex].title}
-                  <Image
-                    src={whyChooseUsData[currentIndex].icon}
-                    alt={whyChooseUsData[currentIndex].title}
-                  />
-                </div>
-                <div className="bg-white/60 ">
-                  {whyChooseUsData[currentIndex].description}
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="md:pt-[180px]">
-          <Image src={whyChooseUs} alt="whyChooseUs" />
-        </div>
+          </div>
+        )}
       </div>
-    </Wrapper>
+      <div className="md:pt-[180px] !px-0">
+        <Image src={whyChooseUs} alt="whyChooseUs" />
+      </div>
+    </div>
   );
 }

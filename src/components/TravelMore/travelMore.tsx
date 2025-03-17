@@ -55,7 +55,7 @@ export default function TravelMore() {
   return (
     <Wrapper>
       <div
-        className="text-primary text-center mt-[-50px]  text-[clamp(16px,8vw,40px)] xl:text-[80px] xl:text-left   md:mb-[24px]  "
+        className="text-primary text-center mt-[-50px]  text-[clamp(16px,8vw,40px)] xl:text-[80px] xl:text-left   md:mb-[24px] md:mt-[0px] md:leading-[108px]  "
         style={{ fontFamily: "Smooch, cursive" }}
       >
         Travel More, Spend Less!

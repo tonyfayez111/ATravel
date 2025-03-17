@@ -10,13 +10,27 @@ import AboutUs from "@/components/aboutus/aboutUs";
 export default function Page() {
   return (
     <div className="flex flex-col gap-[80px] md:gap-[160px]">
-      <Hero />
-      <TravelMore />
-      <Break />
-      <Destinations />
-      <WhyChooseUs />
-      <ContactUs />
-      <AboutUs />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="travelmore">
+        <TravelMore />
+      </div>
+      <div id="break">
+        <Break />
+      </div>
+      <div id="tours">
+        <Destinations />
+      </div>
+      <div id="reviews">
+        <WhyChooseUs />
+      </div>
+      <div id="contact">
+        <ContactUs />
+      </div>
+      <div id="about">
+        <AboutUs />
+      </div>
     </div>
   );
 }

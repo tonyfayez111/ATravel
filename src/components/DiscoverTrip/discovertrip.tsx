@@ -1,9 +1,12 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Wrapper from "../layout/Wrapper";
 import CommonList from "./CommonList/Commonlist";
 
 export default function DiscoverTrip() {
+  const [price, setPrice] = useState(0);
+  const [height, setHeight] = useState<number>(0);
+
   const [commonList, setCommonList] = useState([
     {
       title: "Location",
@@ -30,8 +33,7 @@ export default function DiscoverTrip() {
       type: "price",
     },
   ]);
-
-  const [price, setPrice] = useState(0);
+  const isAnyOpened = commonList.some((item) => item.opened);
 
   const toggleOpened = (index: number) => {
     setCommonList((prevList) =>
@@ -47,19 +49,32 @@ export default function DiscoverTrip() {
     setPrice(Number(event.target.value));
   };
 
+  useEffect(() => {
+    if (!isAnyOpened) {
+      setHeight(225);
+    } else {
+      setHeight(0);
+    }
+  }, [isAnyOpened]);
   return (
-    <div className="flex flex-col items-center justify-center xl:pt-[72px] xl:h-[266px] xl:w-[1240px]  ">
-      <br />
-      <br />
+    <div
+      className={`flex flex-col items-center justify-center
+   
+      xl:w-[1240px] `}
+    >
       <div
         className="text-primary w-full text-[40px] md:text-[80px]   text-center "
         style={{ fontFamily: "Smooch, cursive" }}
       >
         Discover Trip
       </div>
-      <br />
-      <div className="flex justify-center w-full">
-        <div className="flex flex-col h-auto  justify-between  xl:flex-row w-full xl:h-[134px]  items-start gap-[20px] py-[32px] px-[24px] bg-white rounded-[10px] border border-[#EBE8E8] shadow-[0px_0px_15px_0px_#817e7e26]">
+
+      <div
+        className={`flex justify-center w-full mt-[24px] xl:h-[${
+          266 + height
+        }px] `}
+      >
+        <div className="flex flex-col h-auto  justify-between items-start  xl:flex-row w-full xl:h-[134px] xl-w-[1240px]   gap-[20px] py-[32px] px-[24px] bg-white rounded-[10px] border border-[#EBE8E8] shadow-[0px_0px_15px_0px_#817e7e26]">
           {commonList.map((item, index) => (
             <div className="w-full">
               <CommonList
