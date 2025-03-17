@@ -6,7 +6,7 @@ import styles from "./header.module.css";
 import HeaderList from "./headerlist";
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeComponent, setActiveComponent] = useState("");
   const [isVisible, setIsVisible] = useState(true);
