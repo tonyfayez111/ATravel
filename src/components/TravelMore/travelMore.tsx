@@ -43,6 +43,9 @@ export default function TravelMore() {
   ];
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 960);
     };

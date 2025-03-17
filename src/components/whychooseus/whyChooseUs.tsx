@@ -37,12 +37,13 @@ const whyChooseUsData = [
   },
 ];
 export default function WhyChooseUs() {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 800);
     };
     window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
   const [currentIndex, setCurrentIndex] = useState(0);
 

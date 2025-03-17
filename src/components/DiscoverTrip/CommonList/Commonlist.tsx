@@ -26,7 +26,7 @@ const CommonList: React.FC<CommonListProps> = ({
   }, []);
   return (
     <div className="flex flex-row items-center w-full ">
-      {title !== "Location" && window.innerWidth >= 1280 && (
+      {title !== "Location" && width >= 1280 && (
         <div className="px-[20px]">
           <svg
             width="1"
